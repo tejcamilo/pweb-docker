@@ -1,0 +1,136 @@
+<%- include('../components/header.ejs') -%>
+<%- include('../components/menuNavegacion.ejs') -%>
+
+     <div class="mainContainer">
+        <div class="centeringContainer">
+            <h1 class="tituloSeccion">Modificar Grupo</h1>
+            <form action="/grupos/actualizar" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="idGrupo" value="<%= grupo._id %>">
+                <div class="formContent">
+                    <div class="formImagen">
+                        <div class="square"id="preview"></div>
+                        <% if (grupo.imagen) { %>
+                            <script>
+                                document.getElementById('preview').style.backgroundImage = "url('<%= grupo.imagen %>')";
+                            </script>
+                        <% } %>
+                        <input type="file" id="imagenGrupo" name="imagen" style="display: none;">
+                        <label for="imagenGrupo" id="customUploadText">
+                            <p>Elegir nueva imagen</p>
+                        </label>
+                    </div>                                        
+                    <div class="formCampos">
+                        <div class="formText">
+                            <label for="nombreGrupo">Nombre del grupo</label><br>
+                            <input type="text" id="nombreGrupo" name="nombre" required value="<%= grupo.nombre %>">
+                        </div>
+                        <div class="formText" id="formTextDesplegable">
+                            <label for="grupoCategoria">Categoria del grupo</label><br>
+                            <select id="grupoCategoria" name="categoria" required>
+                                <option value="0">Categoria del grupo</option>
+                                <% if(grupo.categoria == "Mixto") {%>
+                                    <option selected value="Mixto">Mixto</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Femenino">Femenino</option>
+                                    <option value="Individual">Individual</option>
+                                    <option value="Duo">Duo</option>
+                                    <option value="Unica">Unica</option>
+                                    <option value="Cultural">Cultural</option>
+                                    <option value="Artistico">Artistico</option>
+                                <% }else if(grupo.categoria == "Masculino") {%>
+                                    <option value="Mixto">Mixto</option>
+                                    <option selected value="Masculino">Masculino</option>
+                                    <option value="Femenino">Femenino</option>
+                                    <option value="Individual">Individual</option>
+                                    <option value="Duo">Duo</option>
+                                    <option value="Unica">Unica</option>
+                                    <option value="Cultural">Cultural</option>
+                                    <option value="Artistico">Artistico</option>
+                                <% }else if(grupo.categoria == "Femenino") {%>
+                                    <option value="Mixto">Mixto</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option selected value="Femenino">Femenino</option>
+                                    <option value="Individual">Individual</option>
+                                    <option value="Duo">Ensamble de rock</option>
+                                    <option value="Unica">Unica</option>
+                                    <option value="Cultural">Cultural</option>
+                                    <option value="Artistico">Artistico</option>
+                                <% }else if(grupo.categoria == "Individual") {%>
+                                    <option value="Mixto">Mixto</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Rugby">Rugby</option>
+                                    <option selected value="Individual">Individual</option>
+                                    <option value="Duo">Duo</option>
+                                    <option value="Unica">Unica</option>
+                                    <option value="Cultural">Cultural</option>
+                                    <option value="Artistico">Artistico</option>
+                                <% }else if(grupo.categoria == "Duo") {%>
+                                    <option value="Mixto">Mixto</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Rugby">Rugby</option>
+                                    <option value="Individual">Individual</option>
+                                    <option selected value="Duo">Duo</option>
+                                    <option value="Unica">Unica</option>
+                                    <option value="Cultural">Cultural</option>
+                                    <option value="Artistico">Artistico</option>
+                                <% }else if(grupo.categoria == "Unica") {%>
+                                    <option value="Mixto">Mixto</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Rugby">Rugby</option>
+                                    <option value="Individual">Individual</option>
+                                    <option value="Duo">Duo</option>
+                                    <option selected value="Unica">Unica</option>
+                                    <option value="Cultural">Cultural</option>
+                                    <option value="Artistico">Artistico</option>
+                                <% }else if(grupo.categoria == "Cultural") {%>
+                                    <option value="Mixto">Mixto</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Rugby">Rugby</option>
+                                    <option value="Individual">Individual</option>
+                                    <option value="Duo">Duo</option>
+                                    <option value="Unica">Unica</option>
+                                    <option selected value="Cultural">Cultural</option>
+                                    <option value="Artistico">Artistico</option>            
+                                <% }else if(grupo.categoria == "Artistico") {%>
+                                    <option value="Mixto">Mixto</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Rugby">Rugby</option>
+                                    <option value="Individual">Individual</option>
+                                    <option value="Duo">Duo</option>
+                                    <option value="Cultural">Cultural</option>
+                                    <option value="Unica">Unica</option>
+                                    <option selected value="Artistico">Artistico</option>            
+                                <% } %>
+                            </select>
+                        </div>
+                        <div class="formText" id="formFecha">
+                            <label for="diaPractica">Dia de la practica</label><br>
+                            <input type="text" id="diaPractica" name="diaspractica" required value="<%= grupo.diaspractica %>">
+                        </div>
+                        <div class="formText" id="formLugar">
+                            <label for="lugarPractica">Lugar de la practica</label><br>
+                            <input type="text" id="lugarPractica" name="ubicacion" value="<%= grupo.ubicacion %>">
+                        </div>
+                        <div class="formText">
+                            <label for="integrantesGrupo">Integrantes del grupo</label><br>
+                            <select id="integrantesGrupo" name="integrantes" multiple required>
+                                <% usuarios.forEach(usuario => { %>
+                                    <option value="<%= usuario._id %>"><%= usuario.nombre %></option>
+                                <% }) %>
+                            </select>
+                            <small>Selecciona varios integrantes manteniendo presionada la tecla Ctrl (Cmd en Mac).</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="formButtonsContainer">
+                    <input type="submit" class="formButton" id="formButtonAzul" value="Guardar">
+                    </form>
+                    <form action="/grupos">
+                        <input type="submit" class="formButton" id="formButtonRojo" value="Cancelar">
+                    </form>
+                </div>
+            </form>
+     
+        </div>
+    </div>
+    <%- include('../components/footer.ejs') -%>

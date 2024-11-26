@@ -1,0 +1,110 @@
+header {
+    background-color: #D90921;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5rem;
+    color: white;
+    height: 7.8125rem;
+}
+
+.menu {
+    text-align: right;
+    margin-right: 20px;
+}
+
+.menu:hover{
+    cursor: pointer;
+}
+
+.menu span {
+    display: block; 
+    width: 3.3rem;
+    height: 0.4rem;
+    margin: 0.5rem;
+    position: relative;
+    background: white;
+    border-radius: 0.3rem;
+    z-index: 1; 
+}
+
+.logo {
+    flex: 1;
+    text-align: left;
+}
+
+.logo img {
+    height: 5.8125rem;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 0rem;
+}
+
+.user span {
+    margin-right: 1rem;
+    font-size: 1.875rem;
+    padding-right: 2rem;
+    text-align: right;
+}
+
+.user-circle {
+    width: 5rem;
+    height: 5rem;
+    background-color: white;
+    border-radius: 50%;  
+}
+
+@media screen and (max-width: 640px) {
+    header{
+        height: 5rem;
+        padding: 4rem;
+    }
+
+    .menu {
+        text-align: left;
+        margin-right: 15px;
+    }
+    
+    .menu:hover{
+        cursor: pointer;
+    }
+    
+    .menu span {
+        display: block; 
+        width: 2.6rem;
+        height: 0.3rem;
+        margin: 0.3rem;
+        position: relative;
+        background: white;
+        border-radius: 0.3rem;
+        z-index: 1; 
+    }
+
+    .logo {
+        flex: 1;
+        text-align: left;
+    }
+    
+    .logo img {
+        height: 4rem;
+    }
+
+    .user span {
+        margin-right: 1rem;
+        font-size: 1.4rem;
+        padding-right: 0.5rem;
+    }
+
+    .user-circle {
+        width: 2.5rem;
+        height: 2.5rem;
+        background-color: white;
+        border-radius: 50%;
+    }
+}

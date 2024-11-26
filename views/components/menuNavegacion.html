@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de navegación</title>
+    <link rel="stylesheet" href="../../assets/css/menuNavegacion.css">
+    <link rel="stylesheet" href="../../assets/css/header.css">
+    <link rel="stylesheet" href="../../assets/css/mainStyles.css">
+</head>
+<body>
+    <header>
+        <div class="menu" id="menuCerrado">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="logo">
+            <img src="../../assets/img/logo.png">
+        </div>
+
+        <div class="user">
+            <span>Usuario 123</span>
+            <div class="user-circle"></div>
+        </div>
+    </header>
+    <div class="sombra" id="sombra"></div>
+    <nav class="sidebar" id="sidebar">
+        <div class="logo-menu">
+            <div class="menu" id="menuAbierto">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="logo">
+                <img src="../../assets/img/logoHorizontalBlanco.png" alt="Logo Universidad del Rosario">
+            </div>
+        </div> 
+        <ul class="menu-items">
+            <li class="mainoption" id="usuarios"><a href="#">Usuarios</a> <div class="play-button" id="play1"></div></li>
+            <div class="option" id="crearUsuarios"><li><a href="../Usuarios/crearUsuario.html">Crear Usuarios</a></li></div>
+            <div class="option" id="verUsuarios"><li><a href="../Usuarios/listaUsuarios.html">Ver Usuarios</a></li></div>
+            <!-- En Editar Usuarios e Inhabilitar Usuarios debería ir a la misma vista, pero dependiendo de dónde venga, mostrar-->
+             <!-- el botón de editar o inhabilitar respectivamente -->
+            <div class="option" id="editarUsuarios"><li><a href="../Usuarios/listaUsuarios.html">Editar Usuarios</a></li></div>
+            <div class="option" id="inhabilitarUsuarios"><li><a href="../Usuarios/listaUsuarios.html">Inhabilitar Usuarios</a></li></div>
+            <!-- -------------------------------------------------------------------------------------------------------------- -->
+
+            <li class="mainoption" id="grupos"><a href="#">Grupos Institucionales</a> <div class="play-button" id="play2"></div></li>
+            <div class="option" id="crearGrupos"><li><a href="../Grupos/crearGrupoEsp.html">Crear Grupos</a></li></div>
+            <div class="option" id="verGrupos"><li><a href="../Grupos/consultarGruposGen.html">Ver Grupos</a></li></div>
+            <!-- En Editar Usuarios e Inhabilitar Usuarios debería ir a la misma vista, pero dependiendo de dónde venga, mostrar-->
+             <!-- el botón de editar o inhabilitar respectivamente -->
+            <div class="option" id="editarGrupos"><li><a href="../Grupos/consultarGruposGen.html">Editar Grupos</a></li></div>
+            <div class="option" id="inhabilitarGrupos"><li><a href="../Grupos/consultarGruposGen.html">Inhabilitar Grupos</a></li></div>
+            <!-- -------------------------------------------------------------------------------------------------------------- -->
+             
+            <li class="mainoption" id="actividades"><a href="#">Actividades</a> <div class="play-button" id="play3"></div></li>
+            <div class="option" id="crearActividades"><li><a href="../Actividades/crearActividad.html">Crear Actividades</a></li></div>
+            <div class="option" id="verActividades"><li><a href="../Actividades/consultarActividades.html">Ver Actividades</a></li></div>
+            <!-- En Editar Usuarios e Inhabilitar Usuarios debería ir a la misma vista, pero dependiendo de dónde venga, mostrar-->
+            <!-- el botón de editar o inhabilitar respectivamente -->
+            <div class="option" id="editarActividades"><li><a href="../Actividades/consultarActividades.html">Editar Actividades</a></li></div>
+            <div class="option" id="inhabilitarActividades"><li><a href="../Actividades/consultarActividades.html">Inhabilitar Actividades</a></li></div>
+            <!-- -------------------------------------------------------------------------------------------------------------- -->
+            
+        </ul>        
+    </nav>
+
+    <script src="../../assets/js/menuNavegacion.js"></script>
+
+</body>
+</html>

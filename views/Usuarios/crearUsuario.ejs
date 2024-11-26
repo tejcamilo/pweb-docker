@@ -1,0 +1,63 @@
+<%- include('../components/header.ejs', { title: 'UR Deporte y Cultura | Crear Usuario' }) -%>
+<%- include('../components/menuNavegacion.ejs') -%>
+
+    <div class="mainContainer">
+        <div class="centeringContainer">
+            <h1 class="tituloSeccion">Crear Usuario</h1>
+            <% if (typeof mensajeAlerta !== 'undefined') { %>
+                <script>
+                    Swal.fire({
+                        html: `<p class="textoAlerta"> <%= mensajeAlerta %> </p>`,
+                        confirmButtonText: "Volver",
+                        customClass: {
+                            confirmButton: "button azul",
+                        },
+                    });
+                </script>
+            <% } %>
+            <form action="/usuarios/crear" method="post" enctype="multipart/form-data">
+                <div class="formContent">
+                    <div class="formImagen">
+                        <div class="square" id="preview"></div>
+                        <input type="file" id="imagenActividad" name="imagen" style="display: none;">
+                        <label for="imagenActividad" id="customUploadText">
+                            <p>Elegir imagen</p>
+                        </label>
+                    </div>
+                    <div class="formCampos">
+                        <div class="formText">
+                            <input type="text" id="nombreUsuario" name="nombre" required value="" placeholder="Nombre">
+                        </div>
+                        <div class="formText">
+                            <input type="text" id="apellidoUsuario" name="apellido" required value="" placeholder="Apellido">
+                        </div>
+                        <div class="formText">
+                            <input type="email" id="correoUsuario" name="correo" required value="" placeholder="Correo Institucional">
+                        </div>
+        
+                        <!-- Creo que esta parte no es necesaria -->
+                        <div class="formText">
+                            <label for="identidad"></label><br>
+                            <input type="text" id="identidad" name="ids" placeholder="ID" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="formButtonsContainer">
+                    <input type="submit" class="formButton" id="formButtonAzul" value="Guardar">
+                    <input type="reset" class="formButton" id="formButtonRojo" value="Cancelar">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+       document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('formButtonRojo').addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent the default reset behavior
+                console.log('Cancelar button clicked');
+                window.location.href = '/usuarios'; // Redirect to another page
+            });
+        });
+    </script>
+
+<%- include('../components/footer.ejs') -%>

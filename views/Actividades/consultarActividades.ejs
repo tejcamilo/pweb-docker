@@ -1,0 +1,46 @@
+<%- include('../components/header.ejs') -%>
+<%- include('../components/menuNavegacion.ejs') -%>
+
+    <div class="contenidoPrincipal">
+        <div class="elementosCentrados">
+            <h1 class="tituloSeccion"><%= titulo %> Actividades</h1>
+            <% if (titulo == "Editar" || titulo == "Inhabilitar o Habilitar") {%>
+                <p class="actionDescription">Elija una actividad para <%= titulo.toLowerCase() %></p>
+            <% } %>
+            <!-- Tabla de actividades -->
+            <table id="tablaActividades" class="dataTable" style="width: 100%;">
+                <thead style="display: none;"> <!-- Ocultar encabezado porque no se usa -->
+                    <tr>
+                        <th>Card</th>
+                    </tr>
+                </thead>
+                <tbody class="cardContainer">
+                    <% actividades.forEach(actividad => { %>
+                        <tr>
+                            <td>
+                                <% if (!actividad.estado){ %>
+                                <div class="card inhabilitado">
+                                <% } else { %>
+                                <div class="card">
+                                <% } %>
+                                    <% if(actividad.imagen) { %>
+                                    <div class="cardImage"style="background: url(<%= actividad.imagen %>) lightgray 50% / cover no-repeat;"></div>
+                                    <% } else { %>
+                                    <div class="cardImage"></div>
+                                    <% } %>
+                                    <div class="cardContent">
+                                        <a href="/actividades/actividad/<%= actividad._id %>">
+                                            <h3><%= actividad.nombre %></h3>
+                                        </a>
+                                        <p><%= actividad.grupo %></p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td data-estado="<%= actividad.estado %>"></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <%- include('../components/footer.ejs') -%>

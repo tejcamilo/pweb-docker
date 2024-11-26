@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/botones.css">
+    <title>Botones</title>
+</head>
+<body>
+    <div class="button" id="botonRojo">
+        <a href="../views/Actividades/crearActividad.html">
+            <p>Rojo</p>
+        </a>
+    </div>
+    <div class="button" id="botonAzul">
+        <a href="../views/Actividades/crearActividad.html">
+            <p>Azul</p>
+        </a>
+    </div>
+    <div class="button" id="botonBlanco">
+        <a href="../views/Actividades/crearActividad.html">
+            <p>Sin fondo</p>
+        </a>
+    </div>
+    
+    <h1>BOTONES DENTRO DE UN FORMULARIO</h1>
+    <h2> (solo para probar que funcionan los botones con el required, por eso no tiene estilos jejeje)</h2>
+    <form action="../views/Actividades/crearActividad.html">
+
+        <label for="campo">Titulo campo requerido</label><br>
+        <input type="text" id="campo" required placeholder="Campo requerido">
+
+        <!-- Para agregar a un formulario existente, solo copiar esta parte -->
+        <div class="formButtonsContainer">
+            <input type="submit" class="formButton" id="formButtonAzul" value="Guardar">
+            <input type="reset" class="formButton" id="formButtonRojo" value="Cancelar">
+        </div>
+        <!-- Para agregar a un formulario existente, solo copiar esta parte -->
+    </form>
+</body>
+</html>

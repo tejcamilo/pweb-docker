@@ -1,0 +1,67 @@
+    <template id="crear">
+        <swal-html>
+            <p class="textoAlerta">¿Está seguro de querer crear una nueva actividad?</p>
+            
+        </swal-html>
+        <swal-button type="confirm" data-swal-callback="submitForm">
+            Confirmar
+        </swal-button>
+        <swal-button type="cancel">
+            Cancelar
+        </swal-button>
+        <swal-param name="allowEscapeKey" value="false" />
+        <swal-param
+            name="customClass"
+            value='{ "confirmButton": "button azul", "cancelButton": "button rojo" }'/>
+        <swal-function-param
+            name="didOpen"
+            value="popup => console.log(popup)" />
+    </template>
+
+    <template id="editar">
+        <swal-html>
+            <p class="textoAlerta">¿Está seguro de querer actualizar la actividad?</p>
+            
+        </swal-html>
+        <swal-button type="confirm" data-swal-callback="submitForm">
+            Confirmar
+        </swal-button>
+        <swal-button type="cancel">
+            Cancelar
+        </swal-button>
+        <swal-param name="allowEscapeKey" value="false" />
+        <swal-param
+            name="customClass"
+            value='{ "confirmButton": "button azul", "cancelButton": "button rojo" }'/>
+        <swal-function-param
+            name="didOpen"
+            value="popup => console.log(popup)" />
+    </template>
+
+    <template id="inhabilitar">
+        <swal-html>
+            <p class="textoAlerta">¿Está seguro de querer cambiar la visibilidad de la actividad?</p>
+            
+        </swal-html>
+        <swal-button type="confirm" data-swal-callback="submitForm">
+            Confirmar
+        </swal-button>
+        <swal-button type="cancel">
+            Cancelar
+        </swal-button>
+        <swal-param name="allowEscapeKey" value="false" />
+        <swal-param
+            name="customClass"
+            value='{ "confirmButton": "button azul", "cancelButton": "button rojo" }'/>
+        <swal-function-param
+            name="didOpen"
+            value="popup => console.log(popup)" />
+    </template>
+    
+    <script src="/js/formCrearActividades.js"></script>
+    <script src="/js/menuNavegacion.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+    <script src="/js/dataTables.js"></script>
+</body>
+</html>

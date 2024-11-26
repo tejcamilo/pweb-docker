@@ -1,0 +1,48 @@
+<%- include('../components/header.ejs') -%>
+<%- include('../components/menuNavegacion.ejs') -%>
+
+     <div class="mainContainer">
+        <div class="centeringContainer">
+            <h1 class="tituloSeccion"><%= actividad.nombre %> - <%= actividad.grupo %></h1>
+            <% if (!actividad.estado){ %>
+                <p class="actionDescription">Esta actividad está inhabilitada</p>
+            <% }%>
+            <form action="/actividades/actualizar/<%= actividad._id %>">
+                <div class="formContent">
+                    <% if(actividad.imagen) { %>
+                        <div class="formImagen"style="background: url(<%= actividad.imagen%>) lightgray 50% / cover no-repeat;"></div>
+                    <% } else { %>
+                        <div class="formImagen" id="formImagenLleno"></div>
+                    <% } %>
+                    <div class="formCampos">
+                        <div class="formText" id="formFecha">
+                            <label for="fechaActividad">Fecha de la actividad</label><br>
+                            <input type="date" id="fechaActividad" value="<%= actividad.fecha %>" readonly>
+                        </div>
+                        <div class="formText" id="formLugar">
+                            <label for="lugarActividad">Lugar de la actividad</label><br>
+                            <input type="text" id="lugarActividad" value="<%= actividad.ubicacion %>" readonly>
+                        </div>
+                        <div class="formText">
+                            <label for="resultadoActividad">Resultado de la actividad</label><br>
+                            <input type="text" id="resultadoActividad"  value="<%= actividad.resultado %>" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="formButtonsContainer">
+                    <input type="submit" class="formButton" id="formButtonAzul" value="Editar">
+                    </form>
+                    <% if (actividad.estado){ %>
+                        <form action="/actividades/inhabilitar/<%= actividad._id %>" method="post" enctype="multipart/form-data" id="form">
+                            <input type="button" class="formButton" id="formButtonRojoInhabilitar" value="Inhabilitar">
+                        </form>
+                    <% } else { %>
+                        <form action="/actividades/habilitar/<%= actividad._id %>" method="post" enctype="multipart/form-data" id="form">
+                            <input type="button" class="formButton" id="formButtonRojoInhabilitar" value="Habilitar">
+                        </form>
+                    <% } %>
+                </div>
+        </div>
+    </div>
+
+    <%- include('../components/footer.ejs') -%>

@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=League+Spartan:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
+
+html {
+    font-size: 60%;
+  }
+
+:root{
+    --UR---Rojo: #d90921;
+    --UR---Azul: #3100A0;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.card{
+    display: flex;
+    width: 21.875rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border-radius: 1.25rem;
+    background: #E9E9E9;
+    box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 0.25);
+    margin: auto; /*Para centrarlas en el grid, no cambiar porfis :)*/
+    transform: scale(1);
+    transition: transform 0.5s ease-out;
+}
+
+.card:hover{
+    transform: scale(1.05);
+    transition: transform 0.5s ease-out;
+}
+
+.inhabilitado{
+    /* pointer-events: none; */
+    opacity: 0.5;
+}
+
+.card a{
+    text-decoration: none;
+    width: 100%;
+    border-radius: 1.25rem;
+}
+
+.cardImage{
+    height: 10.75rem;
+    align-self: stretch;
+    border-radius: 1.25rem 1.25rem 0rem 0rem;
+    background-color: #B9B9B9;
+}
+
+.cardContent{
+    display: flex;
+    padding: 0.9375rem 1.25rem 1.5625rem 1.25rem;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.cardContent h3{
+    align-self: stretch;
+    color: #000;
+
+    /* TipografiaSubtitulos */
+    font-family: "Cabin", sans-serif;
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cardContent p{
+    align-self: stretch;
+    color: var(--UR---Rojo, #D90921);
+    font-family: "League Spartan";
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+@media screen and (max-width: 640px){
+    .card{
+        width: 17.875rem;
+        height: 14rem;
+    }
+    /* disminuir tamaño de letra */
+    .cardContent h3{
+        font-size: 1.5rem;
+    }
+
+    .cardContent p{
+        font-size: 1.25rem;
+    }
+}

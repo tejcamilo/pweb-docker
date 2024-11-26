@@ -1,0 +1,58 @@
+<%- include('../components/header.ejs') -%>
+<%- include('../components/menuNavegacion.ejs') -%>
+
+     <div class="mainContainer">
+        <div class="centeringContainer">
+            <h1 class="tituloSeccion"><%= grupo.nombre %> - <%= grupo.categoria %></h1>
+            <% if (!grupo.estado){ %>
+                <p class="actionDescription">Este grupo está inhabilitado</p>
+            <% }%>
+            <form action="/grupos/actualizar/<%= grupo._id %>">
+                <div class="formContent">
+                    <div class="formImagen">
+                        <% if (grupo.imagen) { %>
+                            <img src="<%= grupo.imagen %>" alt="Imagen del grupo" style="width: 100%; height: auto; border-radius: 10px; object-fit: cover;">
+                        <% } else { %>
+                            <p style="text-align: center; color: gray;">No hay imagen disponible para este grupo.</p>
+                        <% } %>
+                    </div>
+                    <div class="formCampos">
+                        <div class="formText" id="formFecha">
+                            <label for="diaPractica">Dia de la practica</label><br>
+                            <input type="text" id="diaPractica" value="<%= grupo.diaspractica %>" readonly>
+                        </div>
+                        <div class="formText" id="formLugar">
+                            <label for="lugarPractica">Lugar de la practica</label><br>
+                            <input type="text" id="lugarPractica" value="<%= grupo.ubicacion %>" readonly>
+                        </div>
+                        <div class="formText">
+                            <label for="integrantesGrupo">Integrantes</label><br>
+                            <ul id="integrantesGrupo">
+                                <% if (grupo.integrantes.length > 0) { %> <!-- Enlace si hay más integrantes -->
+                                    <li class="mensajeIntegrantes">
+                                        <a href="/grupos/verIntegrantes/<%= grupo._id %>" class="verMas">Ver todos los integrantes...</a>
+                                    </li>
+                                <% } else { %>
+                                    <li class="mensajeIntegrantes">No hay integrantes en este grupo.</li>
+                                <% } %> 
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="formButtonsContainer">
+                    <input type="submit" class="formButton" id="formButtonAzul" value="Editar">
+                    </form>
+                    <% if (grupo.estado){ %>
+                        <form action="/grupos/inhabilitar/<%= grupo._id %>" method="post">
+                            <input type="submit" class="formButton" id="formButtonRojo" value="Inhabilitar">
+                        </form>
+                    <% } else { %>
+                        <form action="/grupos/habilitar/<%= grupo._id %>" method="post">
+                            <input type="submit" class="formButton" id="formButtonRojo" value="Habilitar">
+                        </form>
+                    <% } %>
+                </div>
+        </div>
+    </div>
+
+    <%- include('../components/footer.ejs') -%>

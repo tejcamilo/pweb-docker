@@ -1,0 +1,39 @@
+<div class="sombra" id="sombra"></div>
+<nav class="sidebar" id="sidebar">
+    <div class="logo-menu">
+        <div class="menu" id="menuAbierto">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="logo">
+            <img src="/img/logoHorizontalBlanco.png" alt="Logo Universidad del Rosario">
+        </div>
+    </div> 
+    <ul class="menu-items">
+        <!-- EN HREF PONER LA RUTA DEL SERVIDOR Y NO EL ARCHIVO AL QUE QUIEREN IR PORQUE SE MUERE LA COSA SI LO HACEN CON EL ARCHIVO -->
+
+        <li class="mainoption" id="usuarios"><a href="#">Usuarios</a> <div class="play-button" id="play1"></div></li>
+        <div class="option" id="crearUsuarios"><li><a href="/usuarios/crear">Crear Usuarios</a></li></div>
+        <div class="option" id="verUsuarios"><li><a href="/usuarios">Ver Usuarios</a></li></div>
+        <!-- Remover estas opciones ya que son redundantes, estas acciones se hacen directamente desde el modulo listaUsuarios al dar click en el usuario -->
+        <!-- <div class="option" id="editarUsuarios"><li><a href="/usuarios">Editar Usuarios</a></li></div> -->
+        <!-- <div class="option" id="inhabilitarUsuarios"><li><a href="">Inhabilitar Usuarios</a></li></div> -->
+        <!-- -------------------------------------------------------------------------------------------------------------- -->
+
+        <li class="mainoption" id="grupos"><a href="#">Grupos Institucionales</a> <div class="play-button" id="play2"></div></li>
+        <div class="option" id="crearGrupos"><li><a href="/grupos/crear">Crear Grupos</a></li></div>
+        <div class="option" id="verGrupos"><li><a href="/grupos">Ver Grupos</a></li></div>
+        <div class="option" id="editarGrupos"><li><a href="/grupos/Editar">Editar Grupos</a></li></div>
+        <div class="option" id="inhabilitarGrupos"><li><a href="/grupos/Inhabilitar o Habilitar">Inhabilitar Grupos</a></li></div>
+        <!-- -------------------------------------------------------------------------------------------------------------- -->
+            
+        <li class="mainoption" id="actividades"><a href="#">Actividades</a> <div class="play-button" id="play3"></div></li>
+        <div class="option" id="crearActividades"><li><a href="/actividades/crear">Crear Actividades</a></li></div>
+        <div class="option" id="verActividades"><li><a href="/actividades">Ver Actividades</a></li></div>
+        <div class="option" id="editarActividades"><li><a href="/actividades/Editar">Editar Actividades</a></li></div>
+        <div class="option" id="inhabilitarActividades"><li><a href="/actividades/Inhabilitar o Habilitar">Inhabilitar o Habilitar Actividades</a></li></div>
+        <!-- -------------------------------------------------------------------------------------------------------------- -->
+        
+    </ul>        
+</nav>

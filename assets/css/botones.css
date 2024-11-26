@@ -1,0 +1,206 @@
+/* BOTONES DE NAVEGACIÓN */
+.button{
+    display: flex;
+    min-height: 3.25rem;
+    height: fit-content;
+    width: 11rem;   
+    margin: 2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    border-radius: 0.625rem;
+    border: none;
+
+    font-family: "League Spartan", sans-serif;
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+
+    box-shadow: 0px 0px 0px 0rem #00000000;
+    padding: 1rem;
+}
+
+.buttonIndex{
+    display: flex;
+    min-height: 3.25rem;
+    height: 20rem;
+    width: 20rem;   
+    margin: 2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    border-radius: 0.625rem;
+    border: none;
+
+    font-family: "League Spartan", sans-serif;
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+    background-color: #21016b; 
+    color: white;   
+
+    box-shadow: 0px 0px 0px 0rem #00000000;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+    height: 40rem;          
+    gap: 2rem;           
+}
+
+.button a{
+    text-decoration: none;
+    padding: 0.7875rem 1.3125rem;
+    color: #FFF;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.625rem;
+}
+
+.button p{
+    text-align: center;
+    color: #FFF;
+}
+
+.button a:hover{
+    text-decoration: underline;
+}
+
+#botonRojo{
+    background-color: var(--UR---Rojo);
+    transition: background-color 0.5s ease-out;
+}
+
+#botonRojo:hover{
+    background-color: #9f0819;
+}
+
+.rojo{
+    border: none;
+    background-color: var(--UR---Rojo);
+    transition: background-color 0.5s ease-out;
+    text-align: center;
+}
+
+.rojo:hover{
+    background-color: #9f0819;
+    text-decoration: underline;
+}
+
+#botonAzul{
+    background-color: var(--UR---Azul);
+    transition: background-color 0.5s ease-out;
+}
+
+#botonAzul:hover{
+    background-color: #21016b;
+}
+
+.azul{
+    border: none;
+    background-color: var(--UR---Azul);
+    transition: background-color 0.5s ease-out;
+    text-align: center;
+}
+
+.azul:hover{
+    background-color: #21016b;
+    text-decoration: underline;
+}
+
+#botonBlanco{
+    background-color: #ffffff00;
+    width: fit-content;
+    margin: 0;
+}
+
+#botonBlanco a, #botonBlanco p{
+    color: var(--UR---Rojo);
+    transition: all 0.5s ease-out;
+}
+
+#botonBlanco a:hover, #botonBlanco p:hover{
+    color: var(--UR---Azul);
+}
+
+/* BOTONES DE FORMULARIOS */
+.formButtonsContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3.125rem;
+    width: 100%;
+}
+
+.formButton{
+    display: flex;
+    height: 3.25rem;
+    width: 10rem;
+    padding: 0.1875rem 1.3125rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    border-radius: 0.625rem;
+    border: none;
+
+    color: #FFF;
+    /* leading-trim: both; */
+    /* text-edge: cap; */
+    font-family: "League Spartan", sans-serif;
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.formButton:hover{
+    text-decoration: underline;
+}
+
+#formButtonAzul, #formButtonAzulEnviar, #formButtonAzulEditar{
+    background-color: var(--UR---Azul);
+    transition: background-color 0.5s ease-out;
+}
+
+#formButtonAzul:hover{
+    background-color: #21016b;
+    cursor: pointer;
+}
+
+#formButtonRojo, #formButtonRojoInhabilitar{
+    background-color: var(--UR---Rojo);
+    transition: background-color 0.5s ease-out;
+}
+
+#formButtonRojo:hover{
+    background-color: #9f0819;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 640px){
+    .button{
+        width: 9rem;
+    }
+
+    .button a{
+        padding: 0.625rem 1rem;
+    }
+
+    .formButton{
+        width: 9rem;
+        padding: 0.1875rem 1rem;
+    }
+
+    .button p{
+        font-size: 1.5rem;
+    }
+
+}

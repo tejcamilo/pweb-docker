@@ -1,0 +1,48 @@
+<%- include('../components/header.ejs') -%>
+<%- include('../components/menuNavegacion.ejs') -%>
+
+<div class="contenidoPrincipal">
+    <div class="elementosCentrados">
+        <h1 class="tituloSeccion"><%= titulo %> Grupos</h1>
+        <% if (titulo == "Editar" || titulo == "Inhabilitar o Habilitar") {%>
+            <p class="actionDescription">Elija un grupo para <%= titulo.toLowerCase() %></p>
+        <% } %>
+        <!-- Tabla de grupos -->
+        <table id="tablaActividades" class="dataTable" style="width: 100%;">
+            <thead style="display: none;">
+                <tr>
+                    <th>Card</th>
+                </tr>
+            </thead>
+            <tbody class="cardContainer">
+                <% grupos.forEach(grupo => { %>
+                    <tr>
+                        <td>
+                            <% if (!grupo.estado){ %>
+                            <div class="card inhabilitado">
+                            <% } else { %>
+                            <div class="card">
+                            <% } %>
+                                <div class="cardImage">
+                                    <% if (grupo.imagen) { %>
+                                        <img src="<%= grupo.imagen %>" alt="Imagen del grupo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                                    <% } else { %>
+                                        <p style="text-align: center; color: gray;">Sin imagen</p>
+                                    <% } %>
+                                </div>
+                                <div class="cardContent">
+                                    <a href="/grupos/grupo/<%= grupo._id %>">
+                                        <h3><%= grupo.nombre %></h3>
+                                    </a>
+                                    <p><%= grupo.categoria %></p>
+                                </div>
+                            </div>
+                        </td>
+                        <td data-estado="<%= grupo.estado %>"></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+</div>
+<%- include('../components/footer.ejs') -%>

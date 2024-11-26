@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../components/header.ejs', { title: 'UR Deporte y Cultura | Iniciar Sesión', autenticado: false }) -%>
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="login">
+                <img src="/img/logo_vertical.png" alt="">
+                <form action="/login" method="post">
+                    <div>
+                        <% if (typeof error != 'undefined') { %>
+                            <div class="error-message">Usuario o Contraseña invalido</div>
+                        <% } %>
+                    </div>
+                    <div class="form-group">
+                        <label for="correo"></label>
+                        <input type="email" id="correo" name="correo" placeholder="Correo Institucional" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password"></label>
+                        <input type="password" id="password" name="password" placeholder="Contraseña" required>
+                    </div>
+                    <br><br>
+                    <button type="submit">Iniciar Sesión</button>
+                    <br><br>
+                    <a href="/recuperarCuenta">Recuperar Cuenta</a>
+                </form>
+            </div>
+        </div>
+    </div>
+<%- include('../components/footer.ejs') -%>

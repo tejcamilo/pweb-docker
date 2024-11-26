@@ -1,0 +1,63 @@
+/* Contenedor del cuadro gris */
+.elementosCentrados {
+    display: flex;
+    width: 25.56rem;
+    height: auto; /* Ajusta la altura al contenido */
+    padding: 2rem; /* Añade espacio dentro del cuadro */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3.125rem;
+    border-radius: 1.25rem;
+    background: #F2F2F2;
+}
+
+/* Contenedor principal */
+.contenidoPrincipal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3.125rem 0;
+    margin: 7.1rem 0;
+}
+
+/* Estilo del texto dentro del cuadro */
+.formText {
+    display: flex;
+    width: 100%; /* Ajusta el ancho para que ocupe todo el espacio dentro del cuadro */
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.formText label {
+    width: 100%; /* Asegura que el label se ajuste al ancho disponible */
+    color: #000;
+    font-family: "League Spartan";
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/* Estilo del formulario */
+.formContent {
+    display: flex;
+    padding: 1.5rem;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    align-self: stretch;
+}
+
+/* Estilo del título */
+.tituloSeccion {
+    width: 100%; /* Asegura que el título ocupe todo el ancho disponible */
+    color: #000;
+    text-align: center;
+    font-family: "Cabin", sans-serif;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}

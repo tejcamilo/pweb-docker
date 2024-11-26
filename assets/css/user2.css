@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=League+Spartan:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --UR---Rojo: #d90921;
+    --UR---Azul: #3100A0;
+}
+
+html {
+    font-size: 60%;
+}
+
+body {
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#page-title {
+    color: var(--UR---Rojo);
+}
+
+#table-container {
+    margin: 50px;
+    padding: 50px;
+    border-radius: 2.5rem;
+    background: rgba(0, 0, 0, 0.06);
+}
+
+#table-container caption {
+    font-size: 2rem; /* Adjust the font size as needed */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px; /* Add some space below the caption */
+    color: var(--UR---Rojo); /* Use the CSS variable */
+}
+
+#table-container h1 {
+    color: var(--UR---Rojo);
+}
+
+#example {
+    font-size: 1.6rem; /* Increase the font size for the table */
+    table-layout: fixed; /* Ensure column widths are respected */
+    width: 100%;
+}
+
+#example th, #example td {
+    padding: 10px; /* Add padding for better readability */
+}
+
+#example th:nth-child(4), #example td:nth-child(4) {
+    width: 200px; /* Set the width for the ID column */
+    text-align: left; /* Left-align the content */
+}
+
+#example th:nth-last-child(2), #example td:nth-last-child(2) {
+    width: 150px; /* Set the width for the second last column */
+    text-align: center; /* Center-align the content */
+}
+
+#example th:last-child, #example td:last-child {
+    width: 100px; /* Set the width for the last column */
+    text-align: center; /* Center-align the content */
+}
+
+.button-link {
+    display: inline-block;
+    text-decoration: none; /* Ensure no underline */
+}
+
+.button-link button {
+    background-color: var(--UR---Azul);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: inline-block; /* Ensure the button is inline-block */
+    margin: 0 auto; /* Center the button */
+}
+
+.button-link button:hover {
+    background-color: #9f0819; /* Darken the background color on hover */
+}
+
+a { /* Remove the default underline */
+    text-decoration: none;
+}
+
+button { /* Remove the default button styles */
+    align-items: center;
+}
+
+td {
+    text-align: left; /* Left-align the content */
+}
+
+#table-container h1{
+    font-size: 3rem;
+    padding-bottom: 2rem;
+}
+
+.user-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid lightslategray    ;
+}
+
+#example td:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

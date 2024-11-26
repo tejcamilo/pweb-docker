@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= typeof title !== 'undefined' ? title : 'UR Deporte y Cultura' %></title>
+    <% if (typeof excludeMainStyles === 'undefined' || !excludeMainStyles) { %>
+        <link rel="stylesheet" href="/css/mainStyles.css">
+    <% } %>
+    <link rel="stylesheet" href="/css/menuNavegacion.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/botones.css">
+    <link rel="stylesheet" href="/css/cards.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+</head>
+<body>
+    <header>
+        <% if (typeof autenticado === 'undefined' || autenticado) { %>
+            <div class="menu" id="menuCerrado">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        <% } %>
+
+        <div class="logo">
+            <a href="/index">
+                <img src="/img/logoHorizontalBlanco.png" alt="Logo">
+            </a>
+        </div>
+        <% if (typeof autenticado === 'undefined' || autenticado) { %>
+            <div class="user">
+                <span><%= username %></span>
+                <a href="/logout">
+                    <img src="/img/avatar2.png" class="user-circle">
+                </a>
+            </div>
+        <% } %>
+
+    </header>

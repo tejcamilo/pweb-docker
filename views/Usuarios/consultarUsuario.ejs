@@ -1,0 +1,101 @@
+<%- include('../components/header.ejs') -%>
+<%- include('../components/menuNavegacion.ejs') -%>
+
+<div class="mainContainer">
+    <div class="centeringContainer">
+        <h1 class="tituloSeccion">Modificar Usuario</h1>
+        <% if (typeof mensajeAlerta !== 'undefined') { %>
+            <script>
+                Swal.fire({
+                    html: `<p class="textoAlerta"> <%= mensajeAlerta %> </p>`,
+                    confirmButtonText: "Volver",
+                    customClass: {
+                        confirmButton: "button azul",
+                    },
+                });
+            </script>
+        <% } %>
+        <form action="/usuarios/actualizar" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="idUsuario" value="<%= usuario._id %>">
+            <div class="formContent">
+                <div class="formImagen">
+                    <div class="square" id="preview"></div>
+                    <% if (usuario.imagen) { %>
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                document.getElementById('preview').style.backgroundImage = "url('/uploads/<%= usuario.imagen.split('/').pop() %>')";
+                            });
+                        </script>
+                    <% } %>
+                    <input type="file" id="imagenActividad" name="imagen" style="display: none;" onchange="previewImage(event)">
+                    <label for="imagenActividad" id="customUploadText">
+                        <p>Elegir imagen</p>
+                    </label>
+                </div>
+                <div class="formCampos">
+                    <div class="formText">
+                        <label for="nombreUsuario">Nombre del usuario</label><br>
+                        <input type="text" id="nombreUsuario" name="nombre" required value="<%= usuario.nombre %>">
+                    </div>
+                    <div class="formText">
+                        <label for="apellidoUsuario">Apellido del usuario</label><br>
+                        <input type="text" id="apellidoUsuario" name="apellido" required value="<%= usuario.apellido %>">
+                    </div>
+                    <div class="formText">
+                        <label for="correoUsuario">Correo institucional</label><br>
+                        <input type="email" id="correoUsuario" name="correo" required value="<%= usuario.correo %>">
+                    </div>
+                    <div class="formText">
+                        <label for="identidad">ID</label><br>
+                        <input type="text" id="identidad" name="ids" required value="<%= usuario.ids %>">
+                    </div>
+                    <div>
+                        <input type="hidden" id="estado" name="estado" value="<%= usuario.estado ? 'false' : 'true' %>">
+                    </div>
+                </div>
+            </div>
+            <div class="formButtonsContainer">
+                <input type="submit" class="formButton" id="formButtonAzul" value="Guardar">
+                <input type="submit" class="formButton" id="formButtonRojo" value="<%= usuario.estado ? 'Inhabilitar' : 'Habilitar' %>">
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('formButtonRojo').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Toggle the button text and update the estado input field
+            const button = event.target;
+            const estado = document.getElementById('estado');
+
+            if (button.value === 'Inhabilitar') {
+                button.value = 'Habilitar';
+                estado.value = 'false';
+            } else {
+                button.value = 'Inhabilitar';
+                estado.value = 'true';
+            }
+
+            // Submit the form
+            button.form.submit();
+        });
+    });
+
+    function previewImage(event) {
+        const preview = document.getElementById('preview');
+        const file = event.target.files[0];
+        const reader = new FileReader();
+
+        reader.onload = function() {
+            preview.style.backgroundImage = `url(${reader.result})`;
+        };
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    }
+</script>
+<%- include('../components/footer.ejs') -%>

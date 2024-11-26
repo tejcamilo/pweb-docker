@@ -1,0 +1,623 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=League+Spartan:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --UR---Rojo: #d90921;
+    --UR---Azul: #3100A0;
+}
+
+html {
+    font-size: 60%;
+}
+
+body {
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.actionDescription{
+    font-size: 1.5rem;
+    margin: -1rem;
+    color: #565555;
+}
+
+.mensajeIntegrantes {
+    font-size: 16px; /* Aumenta el tamaño del texto */
+    /* font-weight: bold; /* Hace que el texto sea más grueso */
+    color: #3100A0; /* Cambia el color a rojo (opcional) */
+}
+
+.selectIntegrantes {
+    width: 100%;
+    height: 42px;
+    font-size: 14px; /* Opcional: ajusta el tamaño del texto */
+    padding: 5px;    /* Opcional: agrega un poco de espacio interior */
+}
+
+.mainContainer{ /*.contenidoPrincipal en el otro archivo*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3.125rem 0rem;
+    margin: 7.1rem 0rem;
+}
+
+.centeringContainer{ /*.elementosCentrados en el otro archivo*/
+    display: flex;
+    width: 77.5rem;
+    padding: 3.125rem 0rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3.125rem;
+    border-radius: 1.25rem;
+    background: #F2F2F2;
+}
+
+.contenidoPrincipal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem 0rem; /* preguntarle a Sofi*/
+    margin: 7.1rem 0rem;
+}
+
+.elementosCentrados{
+    display: flex;
+    width: 100%;
+    padding: 0rem; /* preguntarle a Sofi*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3.125rem;
+    border-radius: 1.25rem;
+    background: #FFFFFF;
+}
+
+.tituloSeccion{
+    align-self: stretch;
+    color: var(--UR---Rojo);
+    text-align: center;
+
+    /* TipografiaTitulos */
+    font-family: "Cabin", sans-serif;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.formContent{
+    display: flex;
+    padding: 1.5rem 1.875rem 1.5rem 3.75rem;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    align-self: stretch;
+}
+
+.formImagen{
+    display: flex;
+    width: 21.875rem;
+    height: 21.875rem;
+    padding: 0.9375rem 0rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.9375rem;
+    border-radius: 1.25rem;
+}
+
+#formImagenLleno{
+    background-color: #B9B9B9;
+    height: 21.875rem;
+    /*La línea anterior tiene que ser con base de datos!*/
+}
+
+.formImagen input{
+    /* CORREGIR ESTO */
+    width: 21.875rem;
+    height: 21.875rem;
+    border: 1px solid #000;
+    border-radius: 0.5rem;
+}
+
+.formImagen label{
+    color: var(--UR---Rojo);
+    /* leading-trim: both;
+    text-edge: cap; */
+    font-family: "League Spartan";
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.formCampos{
+    display: flex;
+    width: 40.375rem;
+    padding: 0.9375rem 1.875rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.875rem;
+}
+
+.formText{
+    height: 6.25rem;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    gap: 0.0005rem;
+}
+
+.formText label{
+    width: 36.5625rem;
+    color: #000;
+    /* leading-trim: both;
+    text-edge: cap; */
+    font-family: "League Spartan";
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.formText input, select{
+    width: 36.5625rem;
+    height: 3.75rem;
+    flex-shrink: 0;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    font-family: "League Spartan";
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.formContent{
+    align-items: center;
+}
+
+.square{
+    width: 21.875rem;
+    height: 21.875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-color: #B9B9B9;
+    border-radius: 1.5rem;
+}
+
+#customUploadText {
+    cursor: pointer;
+    color: var(--UR---Rojo);
+    /* leading-trim: both;
+    text-edge: cap; */
+    font-family: "League Spartan";
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.cardContainer{
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(21.875rem, 1fr));
+    gap: 3rem 2rem;
+    margin: 0rem 3.125rem;
+}
+
+/* Estilos para datatable */
+
+
+/*Prueba datatables*/
+
+.dataTable{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dataTables_wrapper {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.dataTables_filter {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.dataTables_paginate {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.dataTables_paginate .paginate_button {
+    background: var(--UR---Azul, #3100A0);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    margin: 0 0.25rem;
+    cursor: pointer;
+}
+
+.dataTables_paginate .paginate_button:hover {
+    background: var(--UR---Rojo, #d90921);
+}
+
+table.dataTable tbody tr {
+    display: table-row !important;
+    border: none !important;
+}
+
+.dt-container, .dt-empty-footer{
+    width: 90%;
+}
+
+.top{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 4rem;
+    margin-right: 10rem;
+}
+
+.dt-search{
+    font-family: "League Spartan", sans-serif;
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+}
+
+.dt-input{
+    border: none;
+    border-bottom: 1px solid #797878;
+    width: 25rem;
+    margin-left: 1rem;
+    
+    font-family: "League Spartan", sans-serif;
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+    color: #797878;
+}
+
+.dt-input:focus{
+    outline: none;
+    border-bottom: 1px solid var(--UR---Azul, #3100A0);
+}
+
+colgroup{
+    display: none;
+}
+
+.sorting_1{
+    margin: auto;
+}
+
+tr{
+    margin: auto;
+}
+
+.bottom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem 0rem;
+}
+
+.dt-paging{
+    display: flex;
+    justify-content: center;
+    width: 400px;
+}
+
+.dt-paging nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.dt-paging-button{
+    display: flex;
+    min-height: 3.25rem;
+    height: fit-content;
+    max-width: 11rem;
+    width: fit-content;
+    min-width: 1.5rem;
+    margin: 0.75rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    border-radius: 0.625rem;
+    border: none;
+
+    font-family: "League Spartan", sans-serif;
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+    padding: 0.625rem 1.25rem;
+    transition: background-color 0.5s ease-out;
+    background-color: #ffffff;
+}
+
+.dt-paging-button:hover{
+    text-decoration: underline;
+    color: #21016b;
+    cursor: pointer;
+}
+
+.disabled{
+    color: #797878;
+}
+
+.disabled:hover{
+    background-color: #ffffff;
+    color: #797878;
+    text-decoration: none;
+    cursor: not-allowed;
+}
+
+.dt-empty{
+    font-family: "League Spartan", sans-serif;
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+    padding: 0.625rem 1.25rem;
+}
+
+.textoAlerta{
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.875rem;
+    margin: 1rem;
+    padding: 1rem;
+    color: #000000;
+}
+
+/* Celulares */
+
+@media screen and (max-width: 640px){
+
+    .tituloSeccion{
+        padding: 0 1rem;
+    }
+
+    .formContent{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .centeringContainer{
+        padding: 5rem 0rem;
+        max-width: 70%;
+    }
+
+    .tituloSeccion{
+        font-size: 2rem;
+    }
+
+    .square{
+        width: 20rem;
+        height: 20rem;
+    }
+
+    #customUploadText{
+        font-size: 1.5rem;
+    }
+
+    .formContent{
+        width: 95%;
+    }
+
+    .formText label{
+        font-size: 1.5rem;
+    }
+
+    .formText input, select{
+        font-size: 1.5rem;
+        width: 100%;
+    }
+
+    .formCampos{
+        width: 70%;
+    }
+
+    input[type="submit"], input[type="reset"]{
+        font-size: 1.5rem;
+    }
+
+    .mainContainer{
+        margin: 3rem 0rem;
+    }
+
+    .top{
+        justify-content: center;
+        margin-right: 0;
+    }
+
+    .dt-paging-button{
+        font-size: 1.25rem;
+    }
+
+    .dt-paging nav{
+        width: 300px;
+    }
+
+}
+
+/* Celulares grandes */
+@media screen and (max-width: 768px){
+    /* Poner la imagen arriba del resto de los campos */
+    .formContent{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Aumentar el padding vertical del div de centrar */
+    .centeringContainer{
+        padding: 5rem 0rem;
+        max-width: 70%;
+    }
+
+}
+
+/* Tablets */
+@media screen and (max-width: 1025px){
+    .formContent{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .centeringContainer{
+        padding: 5rem 0rem;
+        max-width: 70%;
+    }
+
+}
+
+/* Estilos inicio de sesión */
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ensure the parent container takes full viewport height */
+    padding-bottom: 12.25rem;
+    gap: 10.25rem;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.login {
+    background-color: rgb(240, 240, 240);
+    border-radius: 3rem; /* 30px = 3rem */
+    color: white;
+    padding: 1rem 2rem; /* 10px 20px = 1rem 2rem */
+    width: 77.2rem; /* 772px = 77.2rem */
+    height: 80rem; /* 980px = 98rem */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5rem;
+}
+
+.login img {
+    align-self: center;
+    height: 30rem; /* 300px = 30rem */
+}
+
+.login form {
+    width: 100%;
+    max-width: 40rem; /* 400px = 40rem */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem; /* Add margin-top to move the form down */
+}
+
+.login .form-group {
+    width: 100%;
+    margin-bottom: 1.5rem; /* 15px = 1.5rem */
+}
+
+.login label {
+    display: block;
+    margin-bottom: 0.5rem; /* 5px = 0.5rem */
+    color: black;
+}
+
+.login input {
+    width: 100%;
+    padding: 1rem; /* 10px = 1rem */
+    border: 0.1rem solid #ccc; /* 1px = 0.1rem */
+    border-radius: 0.5rem; /* 5px = 0.5rem */
+    height: 5rem; /* 50px = 5rem */
+    font-family: "League Spartan";
+    font-size: 1.875rem; /* 30px = 3rem */
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.login button {
+    padding: 1.5rem 2rem; /* 15px 20px = 1.5rem 2rem */
+    border: none;
+    border-radius: 0.5rem; /* 5px = 0.5rem */
+    background-color: #D90921;
+    color: white;
+    cursor: pointer;
+}
+
+.login a {
+    color: #D90921;
+    text-decoration: none;
+    font-size: 1.84rem; /* adjusted to rem */
+}
+
+.login button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive styles for screens smaller than 768px */
+@media (max-width: 768px) {
+    .main {
+        padding-bottom: 6rem; /* Adjust padding for smaller screens */
+    }
+
+    .login {
+        width:100%; /* Make the login container take 90% of the screen width */
+        height: auto; /* Adjust height to auto for better responsiveness */
+        padding: 2rem; /* Adjust padding for smaller screens */
+    }
+
+    .login img {
+        height: 20rem; /* Adjust image height for smaller screens */
+    }
+
+    .login form {
+        margin-top: 2rem; /* Adjust margin-top for smaller screens */
+    }
+
+    .login input {
+        font-size: 1.5rem; /* Adjust font size for smaller screens */
+        height: 4rem; /* Adjust input height for smaller screens */
+    }
+
+    .login button {
+        padding: 1rem 1.5rem; /* Adjust button padding for smaller screens */
+    }
+}
+
+.error-message {
+    color: red;
+    font-size: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}

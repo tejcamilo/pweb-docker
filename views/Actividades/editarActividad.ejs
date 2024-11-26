@@ -1,0 +1,90 @@
+<%- include('../components/header.ejs') -%>
+<%- include('../components/menuNavegacion.ejs') -%>
+
+     <div class="mainContainer">
+        <div class="centeringContainer">
+            <h1 class="tituloSeccion">Modificar Actividad</h1>
+            <form action="/actividades/actualizar" method="post" enctype="multipart/form-data" id="form">
+                <input type="hidden" name="idActividad" value="<%= actividad._id %>">
+                <div class="formContent">
+                    <div class="formImagen">
+                        <div class="square"id="preview"></div>
+                        <% if (actividad.imagen) { %>
+                            <script>
+                                document.getElementById('preview').style.backgroundImage = "url('<%= actividad.imagen %>')";
+                            </script>
+                        <% } %>
+                        <input type="file" id="imagenActividad" name="imagen" style="display: none;">
+                        <label for="imagenActividad" id="customUploadText">
+                            <p>Elegir imagen</p>
+                        </label>
+                    </div>
+                    <div class="formCampos">
+                        <div class="formText">
+                            <label for="nombreActividad">Nombre de la actividad</label><br>
+                            <input type="text" id="nombreActividad" name="nombre" required value="<%= actividad.nombre %>">
+                        </div>
+                        <div class="formText" id="formTextDesplegable">
+                            <label for="grupoActividad">Grupo que participa</label><br>
+                            <select id="grupoActividad" name="grupo" required>
+                                <% if(grupos) { %>
+                                    <% if(actividad.grupo) { %>
+                                        <option value="0">Grupo que participa</option>
+                                        <% grupos.forEach(grupo => { %>
+                                            <option value="<%= grupo.nombre %>" <%= grupo.nombre === actividad.grupo ? 'selected' : '' %>><%= grupo.nombre %></option>
+                                        <% }); %>
+                                    <% } else { %>
+                                        <option value="0" selected>Grupo que participa</option>
+                                        <% grupos.forEach(grupo => { %>
+                                            <option value="<%= grupo.nombre %>"><%= grupo.nombre %></option>
+                                        <% }); %>
+                                    <% } %>
+                                <% } else { %>
+                                    <option value="0">Grupo que participa</option>
+                                    <option value="Natación">Natación</option>
+                                    <option value="Ultimate">Ultimate</option>
+                                    <option value="Rugby">Rugby</option>
+                                    <option value="Teatro">Teatro</option>
+                                    <option value="Ensamble de rock">Ensamble de rock</option>
+                                    <option value="Danza árabe">Danza árabe</option>
+                                <% } %>
+                            </select>
+                        </div>
+                        <div class="formText" id="formFecha">
+                            <label for="fechaActividad">Fecha de la actividad</label><br>
+                            <input type="date" id="fechaActividad" name="fecha" required value="<%= actividad.fecha %>">
+                        </div>
+                        <div class="formText" id="formLugar">
+                            <label for="lugarActividad">Lugar de la actividad</label><br>
+                            <input type="text" id="lugarActividad" name="ubicacion" value="<%= actividad.ubicacion %>">
+                        </div>
+                        <div class="formText">
+                            <label for="resultadoActividad">Resultado de la actividad</label><br>
+                            <input type="text" id="resultadoActividad" name="resultado" value="<%= actividad.resultado %>">
+                        </div>
+                    </div>
+                </div>
+                <div class="formButtonsContainer">
+                    <input type="button" class="formButton" id="formButtonAzulEditar" value="Guardar">
+                    </form>
+                    <form action="/actividades">
+                        <input type="submit" class="formButton" id="formButtonRojo" value="Cancelar">
+                    </form>
+                </div>
+            </form>
+     
+        </div>
+    </div>
+
+    <script>
+        <% if(mensajeAlerta) {%>
+            Swal.fire({
+                html: `<p class="textoAlerta"> <%= mensajeAlerta %> </p>`,
+                confirmButtonText: "Volver",
+                customClass: {
+                    confirmButton: "button azul",
+                },
+            });
+        <% } %></script>
+
+        <%- include('../components/footer.ejs') -%>

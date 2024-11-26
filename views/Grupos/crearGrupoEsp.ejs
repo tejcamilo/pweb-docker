@@ -1,0 +1,69 @@
+<%- include('../components/header.ejs') -%>
+<%- include('../components/menuNavegacion.ejs') -%>
+
+    <div class="mainContainer">
+        <div class="centeringContainer">
+            <h1 class="tituloSeccion">Crear Nuevo Grupo</h1>
+            <form action="/grupos/crear" method="post" enctype="multipart/form-data">
+                <div class="formContent">
+                    <div class="formImagen">
+                        <div class="square" id="preview"></div>
+                        <% if (imagen) { %>
+                            <script>
+                                document.getElementById('preview').style.backgroundImage = "url('<%= imagen %>')";
+                            </script>
+                        <% } %>
+                        <input type="file" id="imagenActividad" name = "imagen" style="visibility: hidden; position: absolute;">
+                        <label for="imagenActividad" id="customUploadText">
+                            <p>Elegir imagen</p>
+                        </label>
+                    </div>
+                    <div class="formCampos">
+                        <div class="formText">
+                            <label for="nombreGrupo">Nombre del grupo</label><br>
+                            <input type="text" id="nombreGrupo" name="nombre" required placeholder="Nombre del grupo">
+                        </div>
+                        <div class="formText" id="formTextDesplegable">
+                            <label for="categoriaGrupo">Categoria del grupo</label><br>
+                            <select id="categoriaGrupo" name="categoria" required>
+                                <option selected value="0">Categoria del grupo</option>
+                                <option value="Mixto">Mixto</option>
+                                <option value="Masculino">Masculino</option>
+                                <option value="Femenino">Femenino</option>
+                                <option value="Individual">Individual</option>
+                                <option value="Duo">Duo</option>
+                                <option value="Unica">Unica</option>
+                                <option value="Cultural">Cultural</option>
+                                <option value="Artistico">Artistico</option>
+                            </select>
+                        </div>
+                        <div class="formText" id="formFecha">
+                            <label for="diaPractica">Horarios de práctica</label><br>
+                            <input type="text" id="diaPractica" name="diaspractica" required placeholder="Días semanales de la práctica">
+                        </div>
+                        <div class="formText" id="formLugar">
+                            <label for="lugarPractica">Lugar de la práctica</label><br>
+                            <input type="text" id="lugarPractica" name="ubicacion" placeholder="Lugar de la práctica">
+                        </div>
+                        <div class="formText">
+                            <label for="integrantesGrupo">Integrantes del grupo</label><br>
+                            <select id="integrantesGrupo" name="integrantes" class="selectIntegrantes" multiple required >
+                                <% usuarios.forEach(usuario => { %>
+                                    <option value="<%= usuario._id %>"><%= usuario.nombre %></option>
+                                <% }) %>
+                            </select>
+                            <small>Selecciona varios integrantes manteniendo presionada la tecla Ctrl (Cmd en Mac).</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="formButtonsContainer">
+                    <input type="submit" class="formButton" id="formButtonAzul" value="Guardar">
+                </form>
+                <form action="/grupos">
+                    <input type="submit" class="formButton" id="formButtonRojo" value="Cancelar">
+                </form>
+                </div>
+        </div>
+    </div>
+
+<%- include('../components/footer.ejs') -%>
